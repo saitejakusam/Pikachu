@@ -1,0 +1,108 @@
+import java.lang.Runnable;
+import java.awt.geom.AffineTransform;
+import java.awt.geom.Path2D;
+import java.awt.*;
+import javax.swing.*;
+import java.awt.geom.Arc2D;
+class doraemon extends JPanel
+{
+    public void paint(Graphics g)
+    {
+super.paintComponent(g);
+this.setBackground(Color.white);
+g.setColor(Color.yellow);
+	g.fillRoundRect(190, 100, 250, 200, 120, 250);
+	g.setColor(Color.black);
+	g.drawRoundRect(190, 100, 250, 200, 120, 250);
+	g.setColor(Color.yellow);
+	g.fillArc(40,110,360,60,90,180);
+	g.setColor(Color.black);
+	g.fillArc(40,124,60,30,90,180);
+	g.drawArc(40,110,360,60,90,180);
+	g.setColor(Color.black);
+	g.fillOval(340, 140, 40, 40);
+	g.fillOval(260, 150, 40, 40);
+	g.setColor(Color.white);
+	g.fillOval(278, 156, 15, 15);
+	g.fillOval(354, 143, 15, 15);
+	g.setColor(Color.red);
+	g.fillOval(218, 206, 35, 35);
+	g.fillOval(388, 200, 35, 35);
+	g.fillArc(298, 190, 50, 100, 180, 180);
+	g.setColor(Color.black);
+	g.drawArc(298, 190, 50, 100, 180, 180);
+	g.drawArc(298, 234, 25, 10, 180, 180);
+	g.drawArc(323, 234, 25, 10, 180, 180);
+	g.drawArc(298, 233, 25, 10, 180, 180);
+	g.drawArc(323, 233, 25, 10, 180, 180);
+	g.drawArc(298, 232, 25, 10, 180, 180);
+	g.drawArc(323, 232, 25, 10, 180, 180);
+	g.drawArc(298, 231, 25, 10, 180, 180);
+	g.drawArc(323, 231, 25, 10, 180, 180);
+	g.fillOval(323, 210,12,4);
+	g.setColor(Color.yellow);
+	g.fillRect(170, 500, 80, 30);
+	g.fillRect(170, 480, 30, 50);
+	g.fillRect(120, 450, 80, 40);
+	g.fillRoundRect(120, 410, 50, 80,10,10);
+	g.fillRoundRect(80, 380, 90, 60,10,10);
+	g.setColor(Color.black);
+	g.drawRoundRect(190, 300, 250, 300, 120, 250);
+	g.setColor(Color.yellow);
+	g.fillRoundRect(190, 300, 250, 300, 120, 250);
+	g.setColor(Color.black);
+	g.drawArc(230, 500, 75, 30, -180, -180);
+	g.drawArc(230, 500, 76, 31, -180, -180);
+	g.drawOval(240, 470, 50, 120);
+	g.drawOval(240, 470, 51, 121);
+	g.setColor(Color.yellow);
+	g.fillOval(240, 470, 50, 120);
+	g.fillArc(353, 470, 65, 210, 180, 180);
+	g.setColor(Color.black);
+	g.drawArc(353, 470, 65, 210, 180, 180);
+	g.drawLine(385, 678, 385, 661);
+	g.drawLine(385, 678, 385, 661);
+	g.drawLine(385, 678, 385, 661);
+	Graphics2D g2d = (Graphics2D)g;
+	g2d.rotate((Math.PI/180.0)*38.0);
+	g2d.setColor(Color.yellow);
+	g2d.fill(new Arc2D.Double(360, -298,60, 300, -180, -180,Arc2D.OPEN));
+	g2d.setColor(Color.black);
+    g2d.draw(new Arc2D.Double(360, -298,60, 300, -180, -180,Arc2D.OPEN));
+    g2d.fill(new Arc2D.Double(375, -298,30, 50, -180, -180,Arc2D.OPEN));
+    g2d.setColor(Color.yellow);
+    g2d.fill(new Arc2D.Double(500, -108,80, 350, -180, -180,Arc2D.OPEN));
+    g2d.rotate((Math.PI/180.0)*98.0);
+    g2d.setColor(Color.yellow);
+    g2d.fill(new Arc2D.Double(39, -580,80, 350, 180, 180,Arc2D.OPEN));
+    g2d.setColor(Color.black);
+    g2d.draw(new Arc2D.Double(39, -580,80, 350, 180, 180,Arc2D.OPEN));
+    }
+}
+public class pokemon extends Thread{
+    public void run() {
+    	JFrame f=new JFrame("pokemon");
+		f.setSize(450,450);
+		f.setDefaultCloseOperation(f.EXIT_ON_CLOSE);
+		for(int i=0;i<=20;i++) {
+			if(i%2!=0) {
+			f.setVisible(true);
+			}else if(i%2==0){
+				f.setVisible(false);
+			}
+		f.setSize(600,800);
+		doraemon g=new doraemon();
+		f.add(g);
+		try{
+			Thread.sleep(1000);
+			
+		}catch(Exception e) {
+			
+		}
+		}
+    }
+    public static void main(String args[]) {
+    	pokemon pk=new pokemon();
+    	pk.start();
+    }
+}
